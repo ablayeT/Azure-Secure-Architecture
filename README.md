@@ -8,7 +8,7 @@
 ## 📋 Executive Summary
 This project demonstrates the implementation of a **"Secure by Design"** cloud infrastructure on Microsoft Azure. The objective is to deploy a 2-Tier application (Web + Data) where the database is strictly isolated from the internet, accessible only via a secured bastion host (Jump Host).
 
-##  Technical Architecture (Infrastructure as Code)
+## 🏗️ Technical Architecture (Infrastructure as Code)
 
 The infrastructure is provisioned via **Terraform** in the `Sweden Central` region:
 
@@ -19,7 +19,7 @@ The infrastructure is provisioned via **Terraform** in the `Sweden Central` regi
     * `AllowMySQLFromWeb` Rule: Authorizes port 3306 *only* from the Frontend subnet (`10.0.1.0/24`).
     * Deny All: All other traffic towards the DB is blocked.
 
-##  Proof of Concept (POC) & Validation
+## 🚀 Proof of Concept (POC) & Validation
 
 To validate the architecture, a full connectivity audit was performed using Nginx, Nmap, and MariaDB.
 
@@ -54,7 +54,7 @@ The error `ERROR 1130` below is the definitive proof of success:
 2.  ✅ **Service:** The DB server received the request (Service Active).
 3.  🔒 **Application Security:** The DB rejected the unauthorized root user (Access Restricted).
 
-![Connection Proof](./images/automation-proof.png)
+![Connection Proof](./images/db-connection-proof.png)
 
 ## 🛠️ Key Commands
 * **Deployment:** `terraform apply`
@@ -68,6 +68,10 @@ Instead of manually installing software via SSH, the Nginx web server is automat
 
 **Terraform Implementation:**
 A bash script is injected via the `custom_data` attribute of the Virtual Machine resource.
+
+![Automation Proof](./images/automation-proof.png)
+
+Result: The web server is fully operational 60 seconds after deployment without any human intervention.
 
 ```hcl
 # In compute.tf
