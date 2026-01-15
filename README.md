@@ -54,7 +54,7 @@ The error `ERROR 1130` below is the definitive proof of success:
 2.  ✅ **Service:** The DB server received the request (Service Active).
 3.  🔒 **Application Security:** The DB rejected the unauthorized root user (Access Restricted).
 
-![Connection Proof](./images/db-connection-proof.png)
+![Connection Proof](./images/automation-proof.png)
 
 ## 🛠️ Key Commands
 * **Deployment:** `terraform apply`
