@@ -72,6 +72,7 @@ A bash script is injected via the `custom_data` attribute of the Virtual Machine
 ```hcl
 # In compute.tf
 custom_data = filebase64("install_nginx.sh")
+```
 
 ![Automation Proof](./images/automation-proof.png)
 
