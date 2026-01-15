@@ -77,3 +77,6 @@ custom_data = filebase64("install_nginx.sh")
 ![Automation Proof](./images/automation-proof.png)
 
 Result: The web server is fully operational 60 seconds after deployment without any human intervention.
+
+Project realized as part of the DevSecOps path.
+Projet réalisé dans le cadre de ma monté en compétence.
