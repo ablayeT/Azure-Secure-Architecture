@@ -69,10 +69,10 @@ Instead of manually installing software via SSH, the Nginx web server is automat
 **Terraform Implementation:**
 A bash script is injected via the `custom_data` attribute of the Virtual Machine resource.
 
-![Automation Proof](./images/automation-proof.png)
-
-Result: The web server is fully operational 60 seconds after deployment without any human intervention.
-
 ```hcl
 # In compute.tf
 custom_data = filebase64("install_nginx.sh")
+
+![Automation Proof](./images/automation-proof.png)
+
+Result: The web server is fully operational 60 seconds after deployment without any human intervention.
