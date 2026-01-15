@@ -71,12 +71,4 @@ A bash script is injected via the `custom_data` attribute of the Virtual Machine
 
 ```hcl
 # In compute.tf
-custom_data = filebase64("install_nginx.sh")```
-
-Result: The web server is fully operational 60 seconds after deployment without any human intervention.
-
-![automation Proof](./images/automation-proof.png)
-
-
----
-*Project realized as part of the DevSecOps path.*
+custom_data = filebase64("install_nginx.sh")
