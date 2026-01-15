@@ -1,0 +1,18 @@
+# Fichiers d'état Terraform (Contient des secrets !)
+*.tfstate
+*.tfstate.*
+
+# Dossier des plugins (Trop lourd)
+.terraform/
+.terraform.lock.hcl
+
+# Logs de crash
+crash.log
+
+# Clés SSH (Si jamais vous en avez mis dans le dossier, par sécurité)
+*.pem
+id_rsa
+id_rsa.pub
+
+# Fichiers variables avec secrets (si vous en aviez)
+terraform.tfvars
