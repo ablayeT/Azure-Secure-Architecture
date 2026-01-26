@@ -5,10 +5,10 @@
 ![Security](https://img.shields.io/badge/Security-NSG-red?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-## 📋 Executive Summary
+##  Executive Summary
 This project demonstrates the implementation of a **"Secure by Design"** cloud infrastructure on Microsoft Azure. The objective is to deploy a 2-Tier application (Web + Data) where the database is strictly isolated from the internet, accessible only via a secured bastion host (Jump Host).
 
-## 🏗️ Technical Architecture (Infrastructure as Code)
+##  Technical Architecture (Infrastructure as Code)
 
 The infrastructure is provisioned via **Terraform** in the `Sweden Central` region:
 
@@ -19,7 +19,7 @@ The infrastructure is provisioned via **Terraform** in the `Sweden Central` regi
     * `AllowMySQLFromWeb` Rule: Authorizes port 3306 *only* from the Frontend subnet (`10.0.1.0/24`).
     * Deny All: All other traffic towards the DB is blocked.
 
-## 🚀 Proof of Concept (POC) & Validation
+##  Proof of Concept (POC) & Validation
 
 To validate the architecture, a full connectivity audit was performed using Nginx, Nmap, and MariaDB.
 
@@ -56,12 +56,12 @@ The error `ERROR 1130` below is the definitive proof of success:
 
 ![Connection Proof](./images/db-connection-proof.png)
 
-## 🛠️ Key Commands
+##  Key Commands
 * **Deployment:** `terraform apply`
 * **Bastion Connection (Jump):** `ssh -J admin@<IP_PUBLIC> admin@<IP_PRIVATE>`
 * **Network Audit:** `nmap -p 3306 <IP_PRIVATE>`
 
-## 🤖 Level 3: DevOps Automation (Infrastructure as Code)
+##  Level 3: DevOps Automation (Infrastructure as Code)
 
 To move beyond manual configuration, **Cloud-Init** was implemented to achieve **Immutable Infrastructure**.
 Instead of manually installing software via SSH, the Nginx web server is automatically provisioned during the VM boot process.
@@ -79,4 +79,5 @@ custom_data = filebase64("install_nginx.sh")
 Result: The web server is fully operational 60 seconds after deployment without any human intervention.
 
 Project realized as part of the DevSecOps path.
-Projet réalisé dans le cadre de ma monté en compétence.
+
+<div align="center"> <sub>Developed by <b>Abdou</b> - Cybersecurity Lab</sub> </div>
